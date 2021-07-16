@@ -1,0 +1,39 @@
+<div class="title-main__content">
+    <div class="title-main__content-item row">
+        <div class="col-2"><button class="btn-back" routerLink="/agency/list"></button></div>
+        <div class="col-8 text-center"><h2>Detalle de Agencia</h2></div>
+    </div>  
+</div>
+
+<div class="row main-form__update">
+    <div class="form-content">
+        <div>
+            <label class="lbl-name">Agencia</label>
+            <input type="text" class="form-control data-input" placeholder="Agencia" [(ngModel)]="agencyForm.agency.val">
+            <small class="validate-message" *ngIf="!agencyForm.agency.isValid()">{{agencyForm.agency.error}}</small>
+        </div><div>
+            <label class="lbl-name">Dirección</label>
+            <input type="text" class="form-control data-input" placeholder="Dirección" [(ngModel)]="agencyForm.address.val">
+            <small class="validate-message" *ngIf="!agencyForm.address.isValid()">{{agencyForm.address.error}}</small>
+        </div><div>
+            <label class="lbl-name">Distrito</label>
+            <input type="text" class="form-control data-input" placeholder="Distrito" [(ngModel)]="agencyForm.district.val">
+            <small class="validate-message" *ngIf="!agencyForm.district.isValid()">{{agencyForm.district.error}}</small>
+        </div><div>
+            <label class="lbl-name">Latitud</label>
+            <input type="text" class="form-control data-input" placeholder="Latitud" [(ngModel)]="agencyForm.lat.val">
+            <small class="validate-message" *ngIf="!agencyForm.lat.isValid()">{{agencyForm.lat.error}}</small>
+        </div><div>
+            <label class="lbl-name">Longitud</label>
+            <input type="text" class="form-control data-input" placeholder="Longitud" [(ngModel)]="agencyForm.lon.val">
+            <small class="validate-message" *ngIf="!agencyForm.lon.isValid()">{{agencyForm.lon.error}}</small>
+        </div>
+        <div class="agency-form__buttons text-center">
+            <button type="number" class="btn btn-primary agency-form-buttons__update" [disabled]="!isValidForm" (click)="updateAction()">Actualizar</button>
+        </div>
+
+        <div class="alert alert-success" role="alert" style="margin-top: 5%" *ngIf="ifAlert">
+            Datos actualizados
+        </div>
+    </div>
+</div>

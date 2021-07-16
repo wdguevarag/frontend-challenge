@@ -1,0 +1,13 @@
+<div class="item-agency row" *ngIf="data" routerLink='/agency/detail/{{data.id}}'>
+    <div class="item-img col-2 text-center">
+        <img src="{{randomImage}}" style="width: 40px; height: 40px; border-radius: 25px;" alt="">
+    </div>
+    <div class="item-info col-9">
+        <h5>{{data.agencia}}</h5>
+        <h6>{{data.departamento}} - {{data.distrito}}</h6>
+        <span>{{data.direccion}}</span>
+    </div>
+    <div class="item-map col-1">
+        <div class="redi-map" routerLink='/agency/location/{{data.id}}'></div>
+    </div>
+</div>

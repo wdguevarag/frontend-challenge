@@ -1,0 +1,17 @@
+<div class="">
+    <div class="title-main__content">
+        <div class="title-main__content-item row">
+            <div class="col-2"><div class="logo-bcp" routerLink='/'></div></div>
+            <div class="col-6"><h2>Agencias</h2></div>
+            <div class="col-4">
+                <input type="text" class="form-control" name="filterPost" placeholder="Buscar" [(ngModel)]="filterPost">
+            </div>
+        </div>  
+    </div>
+    <div class="item-list__content">
+        <app-item-agency [data]="agency" *ngFor="let agency of agencies | filter:filterPost"></app-item-agency>
+    </div>
+
+    <div class="btn add-button" routerLink='/agency/detail/{{newId}}'>+</div>
+
+</div>
